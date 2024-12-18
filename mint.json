@@ -1,29 +1,38 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+  "name": "Documentação Smink",
+  "api": {
+    "auth": {
+      "method": "key",
+      "name": "Authorization"
+    },
+    "playground": {
+      "mode": "show"
+    }
   },
-  "favicon": "/favicon.svg",
+  "logo": {
+    "dark": "https://smink.com.br/wp-content/uploads/2024/07/2-1.png",
+    "light": "https://smink.com.br/wp-content/uploads/2024/07/1-1.png"
+  },
+  "favicon": "https://smink.com.br/wp-content/uploads/2024/07/Design-sem-nome.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#6300E9",
+    "light": "#9647FF",
+    "dark": "#9647FF",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#6300E9",
+      "to": "#260075"
     }
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Suporte",
+      "url": "mailto:suporte@smink.com.br"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Painel",
+    "url": "https://painel.smink.com.br"
   },
   "tabs": [
     {
@@ -33,59 +42,36 @@
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://smink.com.br/blog"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Comece por aqui",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "guia/comece-aqui",
+        "guia/autenticacao",
+        "guia/codigo-http-das-resposta",
+        "guia/limites-da-api"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Informações Básicas",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "api-reference/authentication",
+        "api-reference/limitations-and-restrictions"
       ]
     },
     {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
+      "group": "OCR",
+      "pages": ["api-reference/endpoint/ocr/ocr-cnh"]
     }
   ],
   "footerSocials": {
     "x": "https://x.com/mintlify",
     "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "linkedin": "https://www.linkedin.com/company/mintsearch"
   }
 }
