@@ -4,24 +4,24 @@ icon: "lock"
 description: "Saiba como autenticar-se na API da BitPix."
 ---
 
-Para autenticar-se na API da BitPix, você precisa obter um **App Token**. Siga os passos abaixo:
+Para autenticar-se na API da BitPix, você precisa obter um **Chave de API**. Siga os passos abaixo:
 
-1. Acesse o [painel de controle da BitPix](https://painel.bitpix.com.br).
-2. Navegue até a aba **App Token**.
-3. Gere e copie o seu **App Token**.
+1. Acesse o [painel de controle da BitPix](https://painel.bitpix.app).
+2. Navegue até a aba **Integração**.
+3. Gere e copie o seu **Chave de API**.
 
-Use esse **App Token** para autenticar suas solicitações à API da BitPix. O **App Token** deve ser incluído no cabeçalho da sua requisição como `APP-KEY`:
+Use esse **Chave de API** para autenticar suas solicitações à API da BitPix. O **Chave de API** deve ser incluído no cabeçalho da sua requisição em Authorization `Chave de API`:
 
 ```http
-APP-KEY: {seu-app-token}
+Chave de API: {sua-chave-api}
 ```
 
 
 ## Uso da API
 
-Você pode usar o **App Token** para autenticar-se na API da BitPix. Inclua o **App Token** no cabeçalho da sua requisição como `APP-KEY`.
+Você pode usar o **Chave de API** para autenticar-se na API da BitPix. Inclua o **Chave de API** no cabeçalho da sua requisição como `Chave de API`.
 
-Lembre-se de que o uso da API está sujeito aos [Termos de Serviço](https://painel.bitpix.com.br/legal) e à [Política de Uso Aceitável](https://painel.bitpix.com.br/legal/policy).
+Lembre-se de que o uso da API está sujeito aos [Termos de Serviço](https://bitpix.app) e à [Política de Uso Aceitável](https://bitpix.app).
 
 <Card
   title="Limites e Restrições"

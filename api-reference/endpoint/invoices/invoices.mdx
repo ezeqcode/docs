@@ -1,0 +1,59 @@
+---
+title: "Gerar Venda"
+sidebarTitle: "/invoices"
+api: "POST https://api.bitpix.app/invoices"
+authMethod: "Bearer Token"
+description: "Esse endpoint gera uma venda e retorna os dados da transação."
+---
+
+<ParamField
+  header="Authorization"
+  type="string"
+  placeholder="Bearer {token}"
+  required
+>
+  O token de autenticação no formato Bearer é obrigatório para acessar este
+  endpoint.
+</ParamField>
+
+<ParamField body="amount" type="number" placeholder="1.1" required>
+  O valor da venda a ser gerada.
+</ParamField>
+
+<ParamField body="type" type="string" placeholder="VENDA" required>
+  Tipo da transação. Use "VENDA" para indicar uma venda.
+</ParamField>
+
+### Response
+
+<ResponseField name="status" type="number">
+  Indica o código HTTP da resposta. Esperado: 201 (Created).
+</ResponseField>
+
+<ResponseField name="body" type="object">
+  Dados da transação gerada.
+  <Expandable title="Mostrar JSON de exemplo">
+  ```json
+  {
+    "id": 2894,
+    "type": "VENDA",
+    "amount": 1.1,
+    "amount_final": 1.1,
+    "id_transaction": "af2d1e3a-d9c2-4fc4-ac85-a47dbb8a49dd",
+    "transaction_pix_id": "NOX152OM61MC0REP3F7HMQYI7U14QU85",
+    "balance_pending": 1.1,
+    "dollar": null,
+    "status": "Aguardando pagamento",
+    "isUrgent": false,
+    "reason": null,
+    "instructions": null,
+    "emv": "af2d1e3a-d9c2-4fc4-ac85-a47dbb8a49dd",
+    "qr_image": "iVBORw0KGgoAAAANS...",
+    "qr_text": "0002010102122684...",
+    "external_reference": null,
+    "fees": "{\"id\":20,...}",
+    "deadline": "2024-12-17T12:33:31.351Z",
+    "createdAt": "2024-12-17T12:33:32.636Z",
+    "updatedAt": "2024-12-17T12:33:32.636Z"
+  }
+</Expandable> </ResponseField>
