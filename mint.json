@@ -16,12 +16,12 @@
   },
   "favicon": "https://bitpix.com.br/wp-content/uploads/2024/07/Design-sem-nome.svg",
   "colors": {
-    "primary": "#6300E9",
-    "light": "#9647FF",
-    "dark": "#9647FF",
+    "primary": "#1a56db",
+    "light": "#1a56db",
+    "dark": "#1a56db",
     "anchors": {
-      "from": "#6300E9",
-      "to": "#260075"
+      "from": "#1a56db",
+      "to": "#1a56db"
     }
   },
   "topbarLinks": [
