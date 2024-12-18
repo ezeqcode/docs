@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentação Smink",
+  "name": "Documentação BitPix",
   "api": {
     "auth": {
       "method": "key",
@@ -11,10 +11,10 @@
     }
   },
   "logo": {
-    "dark": "https://smink.com.br/wp-content/uploads/2024/07/2-1.png",
-    "light": "https://smink.com.br/wp-content/uploads/2024/07/1-1.png"
+    "dark": "https://bitpix.com.br/wp-content/uploads/2024/07/2-1.png",
+    "light": "https://bitpix.com.br/wp-content/uploads/2024/07/1-1.png"
   },
-  "favicon": "https://smink.com.br/wp-content/uploads/2024/07/Design-sem-nome.svg",
+  "favicon": "https://bitpix.com.br/wp-content/uploads/2024/07/Design-sem-nome.svg",
   "colors": {
     "primary": "#6300E9",
     "light": "#9647FF",
@@ -27,12 +27,12 @@
   "topbarLinks": [
     {
       "name": "Suporte",
-      "url": "mailto:suporte@smink.com.br"
+      "url": "mailto:suporte@bitpix.com.br"
     }
   ],
   "topbarCtaButton": {
     "name": "Painel",
-    "url": "https://painel.smink.com.br"
+    "url": "https://painel.bitpix.com.br"
   },
   "tabs": [
     {
@@ -44,7 +44,7 @@
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://smink.com.br/blog"
+      "url": "https://bitpix.com.br/blog"
     }
   ],
   "navigation": [
