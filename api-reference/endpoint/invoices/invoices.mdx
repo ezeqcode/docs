@@ -6,20 +6,24 @@ authMethod: "authorization"
 description: "Esse endpoint gera uma venda"
 ---
 
-
-<ParamField header="APP-KEY" type="string" placeholder="APP-KEY" required>
-  A APP-KEY é essencial para acessar a API. Você pode encontrá-la em [APP TOKEN](https://painel.bitpix.app).
+<ParamField
+  header="Authorization"
+  type="string"
+  placeholder="Bearer {token}"
+  required
+>
+  O token de autenticação no formato Bearer é obrigatório para acessar este
+  endpoint.
 </ParamField>
 
-
-<ParamField body="image" type="file" placeholder="image do cnh (BASE 64)" required>
-  Imagem do CNH em base 64
+<ParamField body="amount" type="number" placeholder="1.1" required>
+  O valor da venda a ser gerada.
 </ParamField>
 
 ### Response
 
-<ResponseField name="status" type="string">
-  Indica se a chamada foi bem-sucedida. "success" se for bem-sucedida, "error" caso contrário.
+<ResponseField name="status" type="number">
+  Indica o código HTTP da resposta. Esperado: 201 (Created).
 </ResponseField>
 
 <ResponseField name="code" type="string">
@@ -28,77 +32,61 @@ description: "Esse endpoint gera uma venda"
 <ResponseField name="response" type="object">
 
 Conteúdo da resposta.
+
 <Expandable title="Mostrar objeto">
-<ResponseField name="condutor" type="object">
+<ResponseField name="venda" type="object">
   <Expandable title="Mostrar objeto">
-  <ResponseField name="nome" type="string">
-    O nome do condutor.
+  <ResponseField name="id" type="number">
+    O identificador único da venda.
   </ResponseField>
-  <ResponseField name="data_nascimento" type="string">
-    A data de nascimento do condutor.
+  <ResponseField name="type" type="string">
+    O tipo da transação (ex.: VENDA).
   </ResponseField>
-  <ResponseField name="local_nascimento" type="string">
-    O local de nascimento do condutor.
+  <ResponseField name="amount" type="number">
+    O valor da transação.
   </ResponseField>
-  <ResponseField name="nacionalidade" type="string">
-    A nacionalidade do condutor.
+  <ResponseField name="amount_final" type="number">
+    O valor final da transação após taxas aplicadas.
   </ResponseField>
-  <ResponseField name="pai" type="string">
-    O nome do pai do condutor.
-  </ResponseField>
-  <ResponseField name="mae" type="string">
-    O nome da mãe do condutor.
+  <ResponseField name="status" type="string">
+    O status da transação (ex.: Aguardando pagamento).
   </ResponseField>
   </Expandable>
 </ResponseField>
 
-<ResponseField name="documentos" type="object">
+<ResponseField name="pix" type="object">
   <Expandable title="Mostrar objeto">
-  <ResponseField name="cpf" type="string">
-    O CPF do condutor.
-  </ResponseField>
-  <ResponseField name="rg" type="string">
-    O RG (identidade) do condutor.
-  </ResponseField>
-  <ResponseField name="orgao_emissor" type="string">
-    O órgão emissor do RG.
-  </ResponseField>
+    <ResponseField name="transaction_pix_id" type="string">
+      O identificador único da transação Pix.
+    </ResponseField>
+    <ResponseField name="qr_text" type="string">
+      O código do QR para pagamento Pix.
+    </ResponseField>
+    <ResponseField name="qr_image" type="string">
+      A imagem codificada em base64 do QR para pagamento Pix.
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
-<ResponseField name="cnh" type="object">
+<ResponseField name="fees" type="object">
   <Expandable title="Mostrar objeto">
-  <ResponseField name="registro" type="string">
-    O número de registro da CNH.
-  </ResponseField>
-  <ResponseField name="categoria" type="string">
-    A categoria da CNH.
-  </ResponseField>
-  <ResponseField name="data_emissao" type="string">
-    A data de emissão da CNH.
-  </ResponseField>
-  <ResponseField name="primeira_habilitacao" type="string">
-    A data da primeira habilitação da CNH.
-  </ResponseField>
-  <ResponseField name="validade" type="string">
-    A data de validade da CNH.
-  </ResponseField>
-  <ResponseField name="local" type="string">
-    O local onde a CNH foi emitida.
-  </ResponseField>
-  <ResponseField name="codigo_seguranca" type="string">
-    O código de segurança da CNH.
-  </ResponseField>
-  <ResponseField name="espelho" type="string">
-    O espelho da CNH.
-  </ResponseField>
-  <ResponseField name="observacoes" type="string">
-    Observações adicionais na CNH.
-  </ResponseField>
-  <ResponseField name="renach" type="string">
-    O número do RENACH (Registro Nacional de Carteiras de Habilitação).
-  </ResponseField>
+    <ResponseField name="percent_sales" type="number">
+      Percentual aplicado nas vendas.
+    </ResponseField>
+    <ResponseField name="amount_per_withdraw" type="number">
+      Taxa aplicada por retirada.
+    </ResponseField>
+    <ResponseField name="salesFeePercent" type="number">
+      Percentual de taxa sobre vendas.
+    </ResponseField>
+    <ResponseField name="freeWithdrawalsPerMonth" type="number">
+      Quantidade de retiradas gratuitas por mês.
+    </ResponseField>
   </Expandable>
+</ResponseField>
+
+<ResponseField name="deadline" type="string">
+  A data limite para o pagamento.
 </ResponseField>
 
 </Expandable>
@@ -132,6 +120,3 @@ Conteúdo da resposta.
 }
 ```
 </ResponseExample>
-
-
-
