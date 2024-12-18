@@ -40,13 +40,7 @@
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://bitpix.com.br/blog"
-    }
-  ],
+  "anchors": [],
   "navigation": [
     {
       "group": "Comece por aqui",
@@ -65,8 +59,8 @@
       ]
     },
     {
-      "group": "OCR",
-      "pages": ["api-reference/endpoint/ocr/ocr-cnh"]
+      "group": "Vendas",
+      "pages": ["api-reference/endpoint/invoices/invoices"]
     }
   ],
   "footerSocials": {
