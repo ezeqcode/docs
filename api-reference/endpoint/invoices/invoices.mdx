@@ -2,58 +2,136 @@
 title: "Gerar Venda"
 sidebarTitle: "/invoices"
 api: "POST https://api.bitpix.app/invoices"
-authMethod: "Bearer Token"
-description: "Esse endpoint gera uma venda e retorna os dados da transação."
+authMethod: "authorization"
+description: "Esse endpoint gera uma venda"
 ---
 
-<ParamField
-  header="Authorization"
-  type="string"
-  placeholder="Bearer {token}"
-  required
->
-  O token de autenticação no formato Bearer é obrigatório para acessar este
-  endpoint.
+
+<ParamField header="APP-KEY" type="string" placeholder="APP-KEY" required>
+  A APP-KEY é essencial para acessar a API. Você pode encontrá-la em [APP TOKEN](https://painel.bitpix.app).
 </ParamField>
 
-<ParamField body="amount" type="number" placeholder="1.1" required>
-  O valor da venda a ser gerada.
-</ParamField>
 
-<ParamField body="type" type="string" placeholder="VENDA" required>
-  Tipo da transação. Use "VENDA" para indicar uma venda.
+<ParamField body="image" type="file" placeholder="image do cnh (BASE 64)" required>
+  Imagem do CNH em base 64
 </ParamField>
 
 ### Response
 
-<ResponseField name="status" type="number">
-  Indica o código HTTP da resposta. Esperado: 201 (Created).
+<ResponseField name="status" type="string">
+  Indica se a chamada foi bem-sucedida. "success" se for bem-sucedida, "error" caso contrário.
 </ResponseField>
 
-<ResponseField name="body" type="object">
-  Dados da transação gerada.
-  <Expandable title="Mostrar JSON de exemplo">
-  ```json
-  {
-    "id": 2894,
-    "type": "VENDA",
-    "amount": 1.1,
-    "amount_final": 1.1,
-    "id_transaction": "af2d1e3a-d9c2-4fc4-ac85-a47dbb8a49dd",
-    "transaction_pix_id": "NOX152OM61MC0REP3F7HMQYI7U14QU85",
-    "balance_pending": 1.1,
-    "dollar": null,
-    "status": "Aguardando pagamento",
-    "isUrgent": false,
-    "reason": null,
-    "instructions": null,
-    "emv": "af2d1e3a-d9c2-4fc4-ac85-a47dbb8a49dd",
-    "qr_image": "iVBORw0KGgoAAAANS...",
-    "qr_text": "0002010102122684...",
-    "external_reference": null,
-    "fees": "{\"id\":20,...}",
-    "deadline": "2024-12-17T12:33:31.351Z",
-    "createdAt": "2024-12-17T12:33:32.636Z",
-    "updatedAt": "2024-12-17T12:33:32.636Z"
-  }
-</Expandable> </ResponseField>
+<ResponseField name="code" type="string">
+  O código de status da resposta.
+</ResponseField>
+<ResponseField name="response" type="object">
+
+Conteúdo da resposta.
+<Expandable title="Mostrar objeto">
+<ResponseField name="condutor" type="object">
+  <Expandable title="Mostrar objeto">
+  <ResponseField name="nome" type="string">
+    O nome do condutor.
+  </ResponseField>
+  <ResponseField name="data_nascimento" type="string">
+    A data de nascimento do condutor.
+  </ResponseField>
+  <ResponseField name="local_nascimento" type="string">
+    O local de nascimento do condutor.
+  </ResponseField>
+  <ResponseField name="nacionalidade" type="string">
+    A nacionalidade do condutor.
+  </ResponseField>
+  <ResponseField name="pai" type="string">
+    O nome do pai do condutor.
+  </ResponseField>
+  <ResponseField name="mae" type="string">
+    O nome da mãe do condutor.
+  </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="documentos" type="object">
+  <Expandable title="Mostrar objeto">
+  <ResponseField name="cpf" type="string">
+    O CPF do condutor.
+  </ResponseField>
+  <ResponseField name="rg" type="string">
+    O RG (identidade) do condutor.
+  </ResponseField>
+  <ResponseField name="orgao_emissor" type="string">
+    O órgão emissor do RG.
+  </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="cnh" type="object">
+  <Expandable title="Mostrar objeto">
+  <ResponseField name="registro" type="string">
+    O número de registro da CNH.
+  </ResponseField>
+  <ResponseField name="categoria" type="string">
+    A categoria da CNH.
+  </ResponseField>
+  <ResponseField name="data_emissao" type="string">
+    A data de emissão da CNH.
+  </ResponseField>
+  <ResponseField name="primeira_habilitacao" type="string">
+    A data da primeira habilitação da CNH.
+  </ResponseField>
+  <ResponseField name="validade" type="string">
+    A data de validade da CNH.
+  </ResponseField>
+  <ResponseField name="local" type="string">
+    O local onde a CNH foi emitida.
+  </ResponseField>
+  <ResponseField name="codigo_seguranca" type="string">
+    O código de segurança da CNH.
+  </ResponseField>
+  <ResponseField name="espelho" type="string">
+    O espelho da CNH.
+  </ResponseField>
+  <ResponseField name="observacoes" type="string">
+    Observações adicionais na CNH.
+  </ResponseField>
+  <ResponseField name="renach" type="string">
+    O número do RENACH (Registro Nacional de Carteiras de Habilitação).
+  </ResponseField>
+  </Expandable>
+</ResponseField>
+
+</Expandable>
+</ResponseField>
+
+
+<ResponseExample>
+```json
+{
+	"id": 2894,
+	"type": "VENDA",
+	"amount": 1.1,
+	"amount_final": 1.1,
+	"id_transaction": "af2d1e3a-d9c2-4fc4-ac85-a47dbb8a49dd",
+	"transaction_pix_id": "NOX152OM61MC0REP3F7HMQYI7U14QU85",
+	"balance_pending": 1.1,
+	"dollar": null,
+	"status": "Aguardando pagamento",
+	"isUrgent": false,
+	"reason": null,
+	"instructions": null,
+	"emv": "af2d1e3a-d9c2-4fc4-ac85-a47dbb8a49dd",
+	"qr_image": "iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAABlBMVEX///8AAABVwtN+AAAFG0lEQVR42uyZMY60OBCFy3LgDF8Ata9BgOQrEZLZGSFXskTANYy4gMkcWH6ropnZ1aZNE+z+TmaATxpPUX71qqA/6/+1BFBNdtVOYs+uEjVt57BMR7RAuAcI1Jh1jic6C0xkMtXeUdvxs2eABQ11VKVPMgyVRlE6qj3VtnPbfUDbaWDS0aZtyZWIXjYjPg0MW6BKzPlqwhCtp/Y+gEOdqZID1jlK37R803FwxFMAUHmTy9T868c/cvIzgJcMbitKRHJRZmrVjEC8ld/1dWBsyEKAU84BORFxVI6iYMI9gD2fmGXSRXmx+GSCjjY3rZorPQT0oy6kY09HtPMWlN7XFIk0p91NACkRFcQy6X1lfRAAokU1nOfPAGdWY64W2Fdfe0JRacNU2+6S4o8B6lUymUjm1FoYTHx4tzCSWf07qx8ArAeQDPJROm2C08UmFEL8Ox8+BfjgrBzqajAbTOIN6EiOHgIEsgZm6hX2oF8219b6aL0uCvUmYMERVdqWiVpyVU6pVR6YDmB+PQUEh6JmUUaNFWShESha35gwmHALQP0Zaj68WOcqvUZ2KA47vHgMUHoPQ7XTsYeBaNTFziiOWnUbQHTsXNSIjcOZ45minIDgzEOACKoxgbYwVrPO1Z424mU9Sqe3ewCy+UBwr56rjasWSSLFfhSx09fp/jogMJ1JRo6PFABWTVHcUejKyY8B6imR4v+cWgUEldrOVQku4ZGeAUQYsa9z7akh0iaM1NqEJR/RpstHfQoQjUQ2VRp1pAFswchF648d6ceifBsQYaxyxflWVr+FUUQ1n8LMV/cAhfjPvd7+AdeV9KwW4iGAJN7OcxRAAnBE0qKoA0jbTQA5lnmSnuSaogRbsFOfyb1T7gGAb3WOuDcj2hZwVXjJzG7chHsACzJZn8ZIzVECe6B44sN7j98HRFBA1qJw8QP/GolMcWBTeA9A0ieTtViy3vNAdjoK6VMb1/R2Yg8APbeJVHt1mpd+JBk4KtjD8CNiHwICE8vRFji4+kUshfplJ73/FLUHgKIayTYQTWtnLJkFxMA3bCroFoAsNwwpkkOxngMAwBTH+kDPAdwxbYsXxXqSuWlp2BbPinwV908BUcYD8KcFQwJXnE6zNka6avf3ATZnex5i7yqpZIo6ivIGuZo8XDr5MdCPqSXNT5AJgXRUYHst4V/0EEDsb2eSXvArD65pea+jiPan8n4KCHgyYYg9RxwbJh2Vr9wh2auwfh+gnnTs9EtyR6GJK2p2G3dqnbvGC58D6ijdYBZwOEwZkwHHgdPsx/x/GzinrKckYg9OBHfEbhDIDal0E0A98amNEtWsyQQl9uy2oNiFXuOFrwO8Scl2xTUmaywTyfAe/V0DqzuALHagktPsjxbUVsEs+SidEw8BZHPTWoiiiDri4s5xKKq2dBsgkeQ5k6mtSi856T1rgUxyfbf2jwC5ytWT9LqoFK82cZlq2+l4DyBY39Vce46D5vzC6ivXnnW+et6vA2SnprWJJERUCZgEd+HSVwNsNwFEZNY59tTI7KLM3AyKxaeW3O9M7MsAnyyybEURld+WzLuLdkptN7xuAgI11DmzZFEUosRRLEwYOat/vyV9G1jQSCSx+GNfZ8Azvi1oDNLP0OwGwGDeMDVkz97FBMem6cdXPwQQ6WrZ+/oofeUrUun99ecWIFAjwxAlROk0kauSfdmUDObfgfa3AU65jsSSE5Eziz8iDaKM3JDeBPxZ/531VwAAAP//NDjdTgf232cAAAAASUVORK5CYII=",
+	"qr_text": "00020101021226840014br.gov.bcb.pix2562qr.iugu.com/public/payload/v2/7DDE46AAAE08420B8AF32B402199D34852040000530398654041.105802BR5916NOX TRADING LTDA6007BARUERI62070503***6304AC9E",
+	"external_reference": null,
+	"fees": "{\"id\":20,\"type\":\"default\",\"percent_sales\":0,\"withdrawals_week\":0,\"amount_per_withdraw\":0,\"salesFeePercent\":0,\"freeWithdrawalsPerMonth\":0,\"excessWithdrawalFee\":0,\"excessWithdrawalFee_ur\":0,\"daysToReleaseSales\":0,\"daysToCompleteWithdrawals\":0,\"daysToCompleteWithdrawals_ur\":0,\"urgentWithdrawalDays\":1,\"urgentWithdrawalDays_ur\":0,\"urgentWithdrawalFee\":null,\"urgentWithdrawalFee_ur\":0,\"dollar\":6.184,\"createdAt\":\"2024-12-16T11:58:02.659Z\",\"updatedAt\":\"2024-12-17T12:33:00.212Z\"}",
+	"deadline": "2024-12-17T12:33:31.351Z",
+	"wallet_photo": "{\"id\":71,\"name_owner\":\"1212121\",\"bank_code\":\"121212\",\"bank_name\":null,\"agency\":null,\"account\":\"1212121\",\"aba_code\":\"121212\",\"swift_code\":\"121212\",\"pix_key\":null,\"pix_type\":null,\"digit\":null,\"status\":true,\"createdAt\":\"2024-12-03T21:02:50.268Z\",\"updatedAt\":\"2024-12-03T21:02:50.268Z\",\"user\":{\"id\":81,\"username\":\"devadmin12\",\"password\":\"$2b$10$EFViTpYW3FkYr/LrRcUQyuBPuj67/de9uKVa5J3VFRV9Ww/7uRTba\",\"tempPassword\":null,\"recoveryDate\":null,\"documentNumber\":\"99861999399\",\"documentType\":\"cpfCnpj\",\"nationality\":\"brasil\",\"balance\":1,\"phoneNumber\":\"5595991111921\",\"address\":\"sp2aaab\",\"email\":\"dev12@vcodes.io\",\"language\":\"PT-BR\",\"status\":\"ACTIVE\",\"notes\":null,\"type\":\"CUSTOMER\",\"is_first_access\":true,\"acceptance_of_terms_date\":\"2024-12-03T21:03:56.160Z\",\"accessToken\":null,\"api_key\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODEsImlhdCI6MTczMzI1OTUwMCwiZXhwIjo0ODU1MzIzNTAwfQ.x7FbBk-9yMeZ-vDxK-J5RyPRpHnLm5vM9VV6dCt4NgI\",\"webhook_url\":null,\"webhook_url_2\":null,\"createdAt\":\"2024-12-03T20:58:20.240Z\",\"updatedAt\":\"2024-12-17T12:31:00.037Z\"}}",
+	"createdAt": "2024-12-17T12:33:32.636Z",
+	"updatedAt": "2024-12-17T12:33:32.636Z"
+}
+```
+</ResponseExample>
+
+
+
