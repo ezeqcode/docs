@@ -19,6 +19,9 @@ description: "Esse endpoint gera uma venda"
 <ParamField body="amount" type="number" placeholder="1.1" required>
   O valor da venda a ser gerada.
 </ParamField>
+<ParamField body="external_reference" type="string" placeholder="Venda...'">
+  O valor da venda a ser gerada.
+</ParamField>
 
 ### Response
 
@@ -33,63 +36,7 @@ description: "Esse endpoint gera uma venda"
 
 Conteúdo da resposta.
 
-<Expandable title="Mostrar objeto">
-<ResponseField name="venda" type="object">
-  <Expandable title="Mostrar objeto">
-  <ResponseField name="id" type="number">
-    O identificador único da venda.
-  </ResponseField>
-  <ResponseField name="type" type="string">
-    O tipo da transação (ex.: VENDA).
-  </ResponseField>
-  <ResponseField name="amount" type="number">
-    O valor da transação.
-  </ResponseField>
-  <ResponseField name="amount_final" type="number">
-    O valor final da transação após taxas aplicadas.
-  </ResponseField>
-  <ResponseField name="status" type="string">
-    O status da transação (ex.: Aguardando pagamento).
-  </ResponseField>
-  </Expandable>
-</ResponseField>
 
-<ResponseField name="pix" type="object">
-  <Expandable title="Mostrar objeto">
-    <ResponseField name="transaction_pix_id" type="string">
-      O identificador único da transação Pix.
-    </ResponseField>
-    <ResponseField name="qr_text" type="string">
-      O código do QR para pagamento Pix.
-    </ResponseField>
-    <ResponseField name="qr_image" type="string">
-      A imagem codificada em base64 do QR para pagamento Pix.
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="fees" type="object">
-  <Expandable title="Mostrar objeto">
-    <ResponseField name="percent_sales" type="number">
-      Percentual aplicado nas vendas.
-    </ResponseField>
-    <ResponseField name="amount_per_withdraw" type="number">
-      Taxa aplicada por retirada.
-    </ResponseField>
-    <ResponseField name="salesFeePercent" type="number">
-      Percentual de taxa sobre vendas.
-    </ResponseField>
-    <ResponseField name="freeWithdrawalsPerMonth" type="number">
-      Quantidade de retiradas gratuitas por mês.
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="deadline" type="string">
-  A data limite para o pagamento.
-</ResponseField>
-
-</Expandable>
 </ResponseField>
 
 
