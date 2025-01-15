@@ -24,11 +24,11 @@ description: "Esse endpoint gera uma venda"
   Descrição da venda. Campo opcional.
 </ParamField>
 
-<ParamField body="payer_name" type="string" placeholder="Nome do pagador">
+<ParamField body="name_client" type="string" placeholder="Nome do pagador">
   Nome do pagador. Campo opcional.
 </ParamField>
 
-<ParamField body="payer_document" type="string" placeholder="CPF ou CNPJ do pagador">
+<ParamField body="name_document" type="string" placeholder="CPF ou CNPJ do pagador">
   Documento do pagador (CPF ou CNPJ). Campo opcional.
 </ParamField>
 
@@ -66,10 +66,10 @@ Conteúdo da resposta.
   <ResponseField name="description" type="string">
     Descrição da venda.
   </ResponseField>
-  <ResponseField name="payer_name" type="string">
+  <ResponseField name="name_client" type="string">
     Nome do pagador.
   </ResponseField>
-  <ResponseField name="payer_document" type="string">
+  <ResponseField name="name_document" type="string">
     Documento do pagador.
   </ResponseField>
   </Expandable>
