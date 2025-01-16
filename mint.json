@@ -14,7 +14,7 @@
     "dark": "assets/logos/BitPix.svg",
     "light": "assets/logos/BitPix.svg"
   },
-  "favicon": "https://i.ibb.co/5c38Q3b/logo-bitpix.png",
+  "favicon": "assets/favicon.ico",
   "colors": {
     "primary": "#1a56db",
     "light": "#1a56db",
