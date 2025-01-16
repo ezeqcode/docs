@@ -55,7 +55,8 @@
       "group": "Informações Básicas",
       "pages": [
         "api-reference/authentication",
-        "api-reference/limitations-and-restrictions"
+        "api-reference/limitations-and-restrictions",
+        "api-reference/ip-or-url-releases"
       ]
     },
     {
