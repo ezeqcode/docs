@@ -11,8 +11,8 @@
     }
   },
   "logo": {
-    "dark": "https://i.ibb.co/5c38Q3b/logo-bitpix.png",
-    "light": "https://i.ibb.co/5c38Q3b/logo-bitpix.png"
+    "dark": "assets/logos/BitPix.svg",
+    "light": "assets/logos/BitPix.svg"
   },
   "favicon": "https://i.ibb.co/5c38Q3b/logo-bitpix.png",
   "colors": {
