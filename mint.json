@@ -56,7 +56,8 @@
       "pages": [
         "api-reference/authentication",
         "api-reference/limitations-and-restrictions",
-        "api-reference/ip-or-url-releases"
+        "api-reference/ip-or-url-releases",
+        "api-reference/webhooks"
       ]
     },
     {
