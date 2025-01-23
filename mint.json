@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentação BitPix",
+  "name": "Documentação BPIX",
   "api": {
     "auth": {
       "method": "key",
@@ -11,10 +11,10 @@
     }
   },
   "logo": {
-    "dark": "assets/logos/BitPix.svg",
-    "light": "assets/logos/BitPix.svg"
+    "dark": "assets/logos/BPIXWhite.svg",
+    "light": "assets/logos/BPIX.svg"
   },
-  "favicon": "",
+  "favicon": "assets/favicon.svg",
   "colors": {
     "primary": "#1a56db",
     "light": "#1a56db",
@@ -27,12 +27,12 @@
   "topbarLinks": [
     {
       "name": "Suporte",
-      "url": "mailto:suporte@bitpix.com.br"
+      "url": "mailto:suporte@bpix.com.br"
     }
   ],
   "topbarCtaButton": {
     "name": "Painel",
-    "url": "https://painel.bitpix.app"
+    "url": "https://painel.bpix.app"
   },
   "tabs": [
     {
