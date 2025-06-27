@@ -1,7 +1,7 @@
 ---
-title: 'Webhooks'
+title: "Webhooks"
 icon: "bell"
-description: 'Os webhooks permitem que você receba notificações automáticas sempre que eventos importantes ocorrerem na sua conta BPIX. Isso facilita a integração e automação de processos.'
+description: "Os webhooks permitem que você receba notificações automáticas sempre que eventos importantes ocorrerem na sua conta BPIX. Isso facilita a integração e automação de processos."
 ---
 
 ## O que são Webhooks?
@@ -15,8 +15,8 @@ Exemplo de status enviado: **PAID** (Pagamento realizado).
 
 ## Como configurar um Webhook?
 
-1. **Acesse o Painel de Integração:** Entre no [painel.bpix.app](https://painel.bpix.app).  
-2. **Navegue até Integração:** Clique na opção **Integração** na barra de navegação.  
+1. **Acesse o Painel de Integração:** Entre no [painel.bpix.app](https://painel.bpix.app).
+2. **Navegue até Integração:** Clique na opção **Integração** na barra de navegação.
 3. **Cadastre a URL do Webhook:** Adicione a URL para onde deseja receber as notificações e salve as alterações.
 
 <Tip>Você pode cadastrar múltiplas URLs para diferentes tipos de eventos!</Tip>
@@ -33,6 +33,7 @@ Exemplo de status enviado: **PAID** (Pagamento realizado).
   "transaction_pix_id": "PIX1234567890ABCDEF",
   "balance_pending": 19.2,
   "status": "Pagamento realizado",
+  "in_status":"PAID",
   "isUrgent": false,
   "emv": "abcd1234-5678-90ef-ghij-1234567890kl",
   "qr_image": "base64-qrcode-image",
@@ -44,12 +45,6 @@ Exemplo de status enviado: **PAID** (Pagamento realizado).
     "username": "usuario_teste",
     "phoneNumber": "000000000"
   },
-  "wallet": {
-    "id": 1,
-    "bank_code": "001",
-    "pix_key": "123.456.789-00",
-    "pix_type": "CPF"
-  }
 }
 ```
 
