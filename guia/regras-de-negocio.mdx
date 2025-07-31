@@ -3,21 +3,19 @@ title: 'Regras de Negócio'
 description: 'Regras de negócio específicas para operações do BPIX'
 ---
 
-# BPIX - Regras de Negócio
-
-### Regras de Saque 
+## Regras de Saque 
 
 | Tipo de Saque | Período para ser efetuado | Valor Mínimo | Valor Máximo | Tarifa |
 |--|--|--|--|--|
 | Saque Normal | 2 dias úteis | R$ 5,00 | R$ 8.000,00 | R$ 2,99 |
 | Saque Emergencial | Em 30 minutos | R$ 60,00 | R$ 8.000,00 | 4,99% |
 
-- O valor máximo de saque vai de acordo com o limite estabelecido para o cliente (Via parâmetro), se o cliente tiver alguma negociação o operador poderá alterar esse valor especificamente para o mesmo.
-
-### Regras de Cobrança
+## Regras de Cobrança
 
 | Tarifa de Cobrança | Período de Liberação |
 |--|--|
 | R$ 2,99 | 1 dia |
 
-- O valor da tarifa também vem de acordo com o parâmetro estabelecido para o cliente, se o cliente tiver alguma negociação o operador poderá alterar esse valor especificamente para o mesmo.
+**Observações:**
+- Os valores máximos e tarifas são estabelecidos via parâmetros por cliente
+- Operadores podem alterar valores especificamente para clientes com negociações especiais
