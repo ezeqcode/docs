@@ -48,7 +48,8 @@
         "guia/comece-aqui",
         "guia/autenticacao",
         "guia/codigo-http-das-resposta",
-        "guia/limites-da-api"
+        "guia/limites-da-api",
+        "guia/regras-de-negocio"
       ]
     },
     {
