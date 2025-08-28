@@ -23,28 +23,24 @@ Exemplo de status enviado: **PAID** (Pagamento realizado).
 
 ## Exemplo de Payload (Status: PAID)
 
+
+
 ```json
 {
-  "id": 184,
-  "type": "VENDA",
-  "amount": 20,
-  "amount_final": 19.2,
-  "id_transaction": "abcd1234-5678-90ef-ghij-1234567890kl",
-  "transaction_pix_id": "PIX1234567890ABCDEF",
-  "balance_pending": 19.2,
+  "id": 72276,
+  "id_transaction": "26182891-7569-414f-aa60-ajkw1jke21",
+  "transaction_pix_id": "asqw2143-50d3-4de7-911d-awqasq131",
+  "external_reference": "2508280924481163",
+  "emv": "1231as12-aqkelqk-4de7-911d-ekajwkalq",
+  "amount": 120,
   "status": "Pagamento realizado",
-  "in_status":"PAID",
-  "isUrgent": false,
-  "emv": "abcd1234-5678-90ef-ghij-1234567890kl",
-  "qr_image": "base64-qrcode-image",
-  "qr_text": "0002010102122684...",
-  "createdAt": "2025-01-15T21:17:57.051Z",
-  "updatedAt": "2025-01-15T21:18:02.379Z",
-  "user": {
-    "id": 1,
-    "username": "usuario_teste",
-    "phoneNumber": "000000000"
-  },
+  "international_status": "PAYMENT_RECEIVED",
+  "name_client": "JOAO PAULO SILVA CRUZ DE LIMA",
+  "document_client": "0000000000",
+  "createdAt": "2025-08-28T12:24:49.056Z",
+  "my_origin": "BPIX",
+  "method": "BPIX",
+  "user": {}
 }
 ```
 
