@@ -62,11 +62,7 @@
       ]
     },
     {
-      "group": "API V1 (LEGACY)",
-      "pages": ["api-reference/endpoint/invoices/invoices"]
-    },
-    {
-      "group": "API V2",
+      "group": "Pagamentos",
       "pages": ["api-reference/endpoint/invoices/payments"]
     }
   ],
